@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Utility Web App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Theme Switcher -->
+    <div class="theme-switcher">
+        <button class="theme-btn active" data-theme="default" title="Default Theme">🎨</button>
+        <button class="theme-btn" data-theme="dark" title="Dark Theme">🌙</button>
+        <button class="theme-btn" data-theme="neon" title="Neon Theme">⚡</button>
+        <button class="theme-btn" data-theme="sunset" title="Sunset Theme">🌅</button>
+    </div>
+
+    <div class="container">
+        <header class="header">
+            <h1>Text Utility</h1>
+            <p class="subtitle">Quick text transformations and statistics</p>
+        </header>
+
+        <main class="main-content">
+            <!-- Text Input Section -->
+            <section class="input-section">
+                <div class="textarea-container">
+                    <textarea id="textInput" placeholder="Paste or type your text here..." spellcheck="false"></textarea>
+                    <div class="textarea-actions">
+                        <button id="clearBtn" class="action-btn" title="Clear text">Clear</button>
+                        <button id="pasteBtn" class="action-btn" title="Paste from clipboard">Paste</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Text Utilities Section -->
+            <section class="utilities-section">
+                <h2>Text Utilities</h2>
+                <div class="utilities-grid">
+                    <button class="utility-btn" data-action="uppercase" title="Convert to UPPERCASE">UPPERCASE</button>
+                    <button class="utility-btn" data-action="lowercase" title="Convert to lowercase">lowercase</button>
+                    <button class="utility-btn" data-action="capitalize" title="Capitalize First Letter">Capitalize</button>
+                    <button class="utility-btn" data-action="removeSpaces" title="Remove extra spaces">Remove Spaces</button>
+                    <button class="utility-btn" data-action="removeLineBreaks" title="Remove line breaks">Remove Line Breaks</button>
+                    <button class="utility-btn" data-action="reverse" title="Reverse text">Reverse</button>
+                    <button class="utility-btn" data-action="copy" title="Copy to clipboard">Copy</button>
+                    <button class="utility-btn" data-action="clearAll" title="Clear all text">Clear All</button>
+                </div>
+            </section>
+
+            <!-- Text Statistics Section -->
+            <section class="stats-section">
+                <h2>Text Statistics</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-label">Words</div>
+                        <div class="stat-value" id="wordCount">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Characters (no spaces)</div>
+                        <div class="stat-value" id="charCountNoSpaces">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Characters (with spaces)</div>
+                        <div class="stat-value" id="charCountWithSpaces">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Reading Time</div>
+                        <div class="stat-value" id="readingTime">0 min</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Floating Action Button for Mobile -->
+        <button id="mobileStatsBtn" class="mobile-stats-btn" title="Show Statistics">📊 Stats</button>
+        
+        <!-- Toast Notification -->
+        <div id="toast" class="toast"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
